@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Python para Iniciantes: Do Zero ao Código</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo_modulo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Curso de Python para Iniciantes: Do Zero ao Código</h1>
+            <a href="{{ url_for('listar_cursos') }}" class="botao voltar">Voltar</a>
+        </div>
+    </header>
+
+    <main class="container">
+<section class="secao-descricao">
+    <h2>Sobre o Curso</h2>
+    <p>
+        Este curso abrangente é perfeito para quem nunca explorou o mundo da cibersegurança ou possui pouca familiaridade com a área. Você desvendará os pilares da segurança cibernética, desde a identificação de riscos e fragilidades até a aplicação de contramedidas essenciais. Nosso propósito é tornar o aprendizado acessível e envolvente, capacitando você a construir uma base robusta em proteção digital.</p>
+    <ul>
+        <li><strong>Para quem é este curso:</strong> Novatos em cibersegurança, estudantes curiosos, profissionais de outras áreas que anseiam por compreender a importância da segurança da informação no cenário atual.</li>
+        <li><strong>O que você vai aprender:</strong> Os alicerces da segurança da informação, o panorama das ameaças digitais (como malware e phishing), as vulnerabilidades mais comuns em sistemas, os princípios da criptografia para proteção de dados, os métodos de autenticação, a função dos firewalls, as melhores práticas para navegar no mundo digital com segurança e muito mais.</li>
+        <li><strong>Metodologia:</strong> Aulas expositivas enriquecidas com exemplos práticos de ataques cibernéticos e estratégias de defesa, análise de casos reais para ilustrar os conceitos e discussões interativas sobre os desafios da segurança digital.</li>
+    </ul>
+</section>
+
+        <section class="secao-modulos">
+            <h2>Conteúdo do Curso</h2>
+            <div class="modulo-container">
+                <ul class="modulo-lista">
+                    {% for modulo in modulos %}
+                    <li class="modulo-header">
+                        <i class="fas fa-folder"></i>
+                        <h3>{{ modulo.titulo }}</h3>
+                    </li>
+                    {% for aula in modulo.aulas %}
+                    <li class="aula-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>{{ aula.titulo }}</span>
+                        <a href="{{ aula.link }}" class="botao-aula">Assistir Aula</a>
+                    </li>
+                    {% endfor %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+
+        <section class="secao-inscricao">
+            <p>Não perca a oportunidade de aprender uma das linguagens de programação mais populares do mundo. Comece
+                sua jornada Python hoje mesmo!</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Nome da sua Plataforma/Academia]. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+
+</html>

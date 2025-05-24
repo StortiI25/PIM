@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+
+<h2>Bem-vindo(a) a Academia Digital!</h2>
+<p>Encontre os melhores cursos online para expandir seus conhecimentos e habilidades.</p>
+{% if session['usuario'] %}
+<p>Olá, {{ session['usuario'] }}!</p>
+<a href="/minha_conta" class="botao destaque">Minha Conta</a>
+{% else %}
+<p>Faça login ou registre-se para acessar nossa plataforma.</p>
+<div class="botoes-inicio">
+    <a href="/login" class="botao primario">Login</a>
+    <a href="/registrar" class="botao secundario">Registrar</a>
+</div>
+{% endif %}
+{% endblock %}

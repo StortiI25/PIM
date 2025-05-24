@@ -1,0 +1,606 @@
+/* Importar fontes do Google Fonts (opcional, mas recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Base Body Styling */
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins as the primary font */
+    background-color: #f7f7f7; /* Light background */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Good readability text color */
+    line-height: 1.6; /* Standard line spacing for general readability */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    opacity: 0; /* For fade-in animation */
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Container for consistent content width and centering */
+.container {
+    max-width: 1000px; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Internal padding */
+}
+
+/* Header Styling */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    position: fixed; /* Fixed navigation bar at the top */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.2em; /* Adjusted for header dominance */
+    letter-spacing: 0.01em; /* Subtle letter spacing */
+}
+
+/* Navigation Styling (if applicable, though not directly in the provided HTML for the "curso" page) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1.1em;
+}
+
+nav a:hover,
+nav a.active {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+nav .btn-comecar {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav .btn-comecar:hover {
+    background-color: #1e7e34;
+}
+
+/* Main Content Area (main.container for the specific course page) */
+main.container {
+    padding-top: 100px; /* Space for fixed header */
+    flex-grow: 1; /* Allow main content to occupy remaining space */
+    width: 100%; /* Ensure it spans the full width of its parent */
+    max-width: 1000px; /* Align with general container width */
+    margin-bottom: 40px; /* Space before footer */
+}
+
+/* Section Styling for spacing and visual separation */
+.secao-descricao,
+.secao-modulos,
+.secao-inscricao {
+    margin-bottom: 30px; /* Space between sections */
+    padding: 25px; /* Internal padding for sections */
+    background-color: #fff; /* White background for sections */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for headings for contrast */
+    color: #212529; /* Darker heading color */
+    letter-spacing: 0.015em; /* Subtle letter spacing for headings */
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee; /* Subtle underline for sections */
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* General Paragraph Text - Main readability improvements */
+.secao-descricao p {
+    letter-spacing: 0.02em; /* Keep subtle letter spacing */
+    line-height: 1.7; /* Increased line spacing for paragraphs */
+    margin-bottom: 1.5em; /* More space below paragraphs */
+    font-size: 1.05em; /* Slightly larger font size for paragraphs */
+}
+
+/* List Items - Main readability improvements */
+.secao-descricao ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin-top: 20px;
+}
+
+.secao-descricao ul li {
+    letter-spacing: 0.02em; /* Keep subtle letter spacing */
+    line-height: 1.6; /* Good line spacing for list items */
+    margin-bottom: 1em; /* Increase space between list items */
+    padding-left: 30px; /* Space for custom bullet point */
+    position: relative; /* For custom bullet point positioning */
+    font-size: 1.05em; /* Slightly larger font size for list items */
+}
+
+/* Custom bullet point for list items */
+.secao-descricao ul li::before {
+    content: '\2022'; /* Unicode for a bullet point */
+    color: #007bff; /* Color of the bullet point (e.g., blue) */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5em; /* Pull it to the left */
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-size: 1.2em; /* Make bullet slightly larger */
+}
+
+/* Bolded text within list items */
+.secao-descricao ul li strong {
+    letter-spacing: 0.005em; /* Very subtle for bold text, as it's already denser */
+    color: #222; /* Ensure bold text is clearly visible */
+}
+
+/* "Sobre o Curso" specific styling (if different from general p/li) */
+/* No specific additional rules needed here, general rules apply */
+
+/* "Para quem é este curso" and "O que você vai aprender" and "Metodologia" text */
+/* These are <strong> inside <li>, so the .secao-descricao ul li strong rules apply */
+
+/* "secao-inscricao" styling */
+.secao-inscricao p {
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+    font-size: 1.15em; /* Make call to action text a bit larger and more prominent */
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Modulo Container Styling */
+.modulo-container {
+    border: 1px solid #e0e0e0; /* Lighter border */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures borders wrap content neatly */
+}
+
+.modulo-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modulo-header {
+    background-color: #f0f3f5; /* Light background for module headers */
+    padding: 12px 20px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Indicate it's clickable (if you plan to make them collapsible) */
+    transition: background-color 0.3s ease;
+}
+
+.modulo-header:hover {
+    background-color: #e5e8ea;
+}
+
+.modulo-header i {
+    margin-right: 12px; /* Space between icon and title */
+    color: #007bff;
+    font-size: 1.3em;
+}
+
+.modulo-header h3 {
+    margin: 0;
+    font-size: 1.25em;
+    letter-spacing: 0.01em;
+}
+
+.aula-item {
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px dashed #f5f5f5; /* Subtle dashed line for separation */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Push button to the right */
+}
+
+.aula-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.aula-item i {
+    margin-right: 10px;
+    color: #6c757d; /* Gray color for file icon */
+    font-size: 1.1em;
+}
+
+.aula-item span {
+    flex-grow: 1; /* Allow text to take up available space */
+    letter-spacing: 0.01em;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Button Styles (general and specific) */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.botao.voltar {
+    background-color: #6c757d; /* Gray button */
+    color: white;
+    margin-left: auto; /* Push button to the right in the header container */
+}
+
+.botao.voltar:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.botao-aula {
+    background-color: #28a745; /* Green button */
+    color: white;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    margin-left: 15px; /* Space between text and button */
+}
+
+.botao-aula:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+/* "Boas-vindas" Section (from your other CSS - assuming it's for a homepage, keeping it separated) */
+main.pagina-inicial {
+    padding-top: 100px; /* Space for the fixed nav bar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.boas-vindas {
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+}
+
+.boas-vindas h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8em; /* Adjusted for prominence */
+}
+
+.boas-vindas h2 svg {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    fill: #007bff;
+}
+
+.boas-vindas p {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.boas-vindas .saudacao {
+    font-size: 1.4em;
+    color: #007bff;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.boas-vindas .botao {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.boas-vindas .botao svg {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.boas-vindas .botao:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+.boas-vindas .botao.ver-cursos {
+    background-color: #007bff;
+    margin-left: 15px;
+}
+
+.boas-vindas .botao.ver-cursos:hover {
+    background-color: #0056b3;
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    margin-top: auto; /* Push footer to the bottom if content is short */
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+/* Form Styling (assuming a login/registration form) */
+form {
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 50px auto; /* Center the form with some top/bottom margin */
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #2c3e50;
+    border-bottom: none; /* No border for form heading */
+    padding-bottom: 0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] { /* Added email as a common form input */
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Link styling outside of specific contexts (e.g., for login/register links) */
+p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    /* Consider if these styles are appropriate for ALL <p><a>,
+       or if they should be more specific (e.g., .form-links a) */
+    /* padding: 10px 20px; */
+    /* border: 1px solid #007bff; */
+    /* border-radius: 5px; */
+    transition: color 0.3s ease; /* Only color transition for general links */
+}
+
+p a:hover {
+    color: #0056b3;
+    /* background-color: #007bff; */
+    /* color: white; */
+}
+
+
+/* Responsividade (Exemplo básico) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduce container padding on smaller screens */
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    .botao.voltar {
+        margin-left: 0; /* Align button to left below title */
+        width: 100%; /* Make it full width */
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav a {
+        width: 100%; /* Full width for nav links */
+        text-align: left;
+        padding: 8px 10px;
+    }
+
+    .boas-vindas {
+        padding: 40px 20px;
+        margin: 20px;
+    }
+
+    .boas-vindas h2 {
+        font-size: 2.2em;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boas-vindas h2 svg {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .boas-vindas p {
+        font-size: 1.1em;
+    }
+
+    .boas-vindas .botao {
+        padding: 12px 25px;
+        font-size: 1.1em;
+        width: 100%; /* Make buttons full width */
+        margin-bottom: 15px;
+    }
+
+    .boas-vindas .botao.ver-cursos {
+        margin-left: 0;
+        margin-top: 0; /* Already has bottom margin from general .boas-vindas .botao */
+    }
+
+    .secao-descricao,
+    .secao-modulos,
+    .secao-inscricao {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .secao-descricao p,
+    .secao-descricao ul li {
+        font-size: 1em; /* Smaller text on small screens */
+    }
+
+    .secao-descricao ul li {
+        padding-left: 25px; /* Adjust padding for bullet point */
+    }
+
+    .secao-descricao ul li::before {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .modulo-header {
+        padding: 10px 15px;
+    }
+
+    .modulo-header h3 {
+        font-size: 1.1em;
+    }
+
+    .aula-item {
+        flex-direction: column; /* Stack aula items vertically */
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .aula-item i {
+        margin-bottom: 5px;
+    }
+
+    .aula-item span {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .botao-aula {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 8px 10px;
+    }
+
+    form {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
